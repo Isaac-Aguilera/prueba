@@ -12,6 +12,13 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+
+    /* 
+        Recive el archivo subido y comprueva que sea .csv o .json, 
+        si es asi lee los datos y hace la media de consumo para separar los clientes fraudulentos.
+        Seguidamente los envia a la vista.
+    */
+
     public function upload(Request $request)
     {
         if($request->file->extension() == "csv" || $request->file->extension() == "json") {
@@ -49,7 +56,7 @@ class Controller extends BaseController
                     array_push($clientesFraudulentos, $client);
                 }
             }
-            return view('datos')->with(['clients' => $clientesFraudulentos]);
+            return view('datos')->with(['clients' => $clientesFraudulentos, 'total' => $count]);
         } else {
             abort(403, 'The file must be a .json or .csv !');
         }

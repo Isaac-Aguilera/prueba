@@ -1,3 +1,6 @@
+
+// Barra de busqueda para la tabla.
+
 function searchTable() {
     var input, filter, found, table, tr, td, i, j;
     input = document.getElementById("search");
@@ -24,6 +27,9 @@ function searchTable() {
     }
 }
 
+
+// Oculta o muestra la tabla o las graficas.
+
 function toggle() {
     if(document.getElementById("tabla").hidden){
         document.getElementById("graficas").hidden = true;
@@ -38,24 +44,21 @@ function toggle() {
     
 }
 
-function downloadPDF(clients, token) {
-    console.log("afsfsa");
-    $.ajax({
-        url: '/generate-pdf',
-        method: 'post',
-        data: {
-            '_token': token,
-            'clients': clients,
-        }, error: function (response) {
-            console.log(response);
-        }
+
+// Recoje la parte de HTML que quiro poner en el PDF y envia el formulario al PDFController con el trozo de HTML que he cojido para crear el PDF.
+
+$(document).ready(function(){
+    $('#create_pdf').click(function(){
+        $('#hidden_html').val($('#graficas').html());
+        $('#make_pdf').submit();
     });
-}
+});
+
 
 
 //Esta funcion es para ordenar la tabla al hacer clic a la columna que querias ordenar pero se colapsa el navegador durante unos segundos y decici quitala.
-/*
 
+/*
 <th onclick="sortTable(0)" scope="col">Id</th>
 <th onclick="sortTable(1)" scope="col">First</th>
 <th onclick="sortTable(2)" scope="col">Last</th>

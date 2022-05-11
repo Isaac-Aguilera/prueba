@@ -6,18 +6,16 @@ use Illuminate\Http\Request;
 use PDF;
 class PDFController extends Controller
 {   
-    
+
+
+    // Recive la parte de HTML que queremos convertir a PDF y la convierte, seguidamentenos muestra el PDF.
+
     public function generatePDF(Request $request)
     {
-        $data = [
-            'clients' => $request['clients']
-        ];
-           
-        $pdf = PDF::loadView('a', $data);
-     
-        return $pdf->download('tutsmake.pdf');
+        $html = $request["hidden_html"];
+        $pdf = PDF::loadHTML($html);
+        $pdf->render();
+        return $pdf->stream('Informe.pdf', array("Attachment" => false));
     }
-    //var_dump(json_decode($request['clients']));
-    //return view('pdf')->with(['clients' => $request['clients']]);
 
 }

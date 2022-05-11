@@ -3,12 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <title>{{ config('app.name', 'Laravel') }}</title>
         <!-- Scripts -->
         <script type="text/javacsript" src="{{ asset('js/app.js') }}" defer></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     </head>
     <header>
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
