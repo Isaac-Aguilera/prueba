@@ -18,16 +18,13 @@
               <a class="navbar-brand border border-secondary p-2 rounded-pill" href="/">
                 EFA
               </a>
-              <a class="navbar-brand border border-secondary p-2 rounded-pill" href="/preview">
-                PDF
-              </a>
-              <!--
+
                 <form action="" method="post">
                     @csrf
                     <input type="text" hidden="true" name="clients" id="clients" value="{{ json_encode($clients) }}">
                     <input class="btn btn-success" type="submit" value="Submit" >
                 </form>
-            -->
+
             <!--
                 <button  onclick="downloadPDF({{ json_encode($clients) }},'{{ csrf_token() }}')" class="button navbar-brand border border-secondary p-2 rounded-pill" >
                 PDF

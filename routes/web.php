@@ -19,6 +19,4 @@ Route::get('/', function () {
 });
 
 Route::post('/upload',[Controller::class, 'upload'])->name('upload');
-//Route::post('/generatePDF', [PDFController::class, 'generatePDF'])->name('generatePDF');
-Route::get('/preview', [PDFController::class, 'preview'])->name('preview');
-Route::get('/download', [PDFController::class, 'download'])->name('download');
+Route::post('/generatePDF', [PDFController::class, 'generatePDF'])->name('generatePDF');

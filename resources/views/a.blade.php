@@ -49,8 +49,6 @@
 
 <div class="text-center">
 
-    <a href="{{ route('download') }}">Download PDF File</a>
-
     <h2>ItSolutionStuff.com.com</h2>
 
 </div>
