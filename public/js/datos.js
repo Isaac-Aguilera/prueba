@@ -1,4 +1,3 @@
-
 // Barra de busqueda para la tabla.
 
 function searchTable() {

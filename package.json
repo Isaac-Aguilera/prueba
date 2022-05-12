@@ -21,7 +21,6 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
-        "chart.js": "^3.7.1",
         "jquery": "^3.6.0"
     }
 }
