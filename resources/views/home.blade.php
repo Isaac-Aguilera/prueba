@@ -23,15 +23,15 @@
           </nav>
     </header>
     <body class="antialiased">
-        <div class="position-absolute top-50 start-50 translate-middle d-flex justify-content-center">
+        <div class="position-absolute top-50 start-50 translate-middle d-flex justify-content-center w-75">
             <form method="POST" action="{{route('upload')}}" accept-charset="UTF-8" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="mb-3">
                     <label class="row justify-content-center form-label fs-1" for="file">Upload file</label>
-                    <input type="file" name="file"class="form-control form-control-lg custom-file @error('file') is-invalid @enderror" accept=".csv, .json" required>
+                    <input type="file" name="file" class="form-control form-control-lg custom-file @error('file') is-invalid @enderror" accept=".csv, .json" required>
                 </div>
                 <div class="row justify-content-center">
-                    <input class="w-50 btn btn-success" type="submit" value="Submit" >
+                    <input class="w-25 btn btn-success" type="submit" value="Submit" >
                 </div>
                 @error('file')
                     <span class="invalid-feedback" role="alert">

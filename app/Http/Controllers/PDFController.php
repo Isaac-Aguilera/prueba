@@ -13,9 +13,7 @@ class PDFController extends Controller
     public function generatePDF(Request $request)
     {
         $html = $request["hidden_html"];
-        $pdf = PDF::loadHTML($html);
-        $pdf->render();
-        return $pdf->stream('Informe.pdf', array("Attachment" => false));
+        return PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadHtml(utf8_decode($html))->setPaper('A4', 'portrait')->stream('Informe.pdf', array("Attachment" => false));
     }
 
 }
