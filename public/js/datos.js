@@ -54,7 +54,6 @@ $(document).ready(function(){
 });
 
 
-
 //Esta funcion es para ordenar la tabla al hacer clic a la columna que querias ordenar pero se colapsa el navegador durante unos segundos y decici quitala.
 
 /*

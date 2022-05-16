@@ -13,7 +13,8 @@ class PDFController extends Controller
     public function generatePDF(Request $request)
     {
         $html = $request["hidden_html"];
-        return PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadHtml(utf8_decode($html))->setPaper('A4', 'portrait')->stream('Informe.pdf', array("Attachment" => false));
+        return PDF::setOptions(['no-stop-slow-scripts' => true,'enable-smart-shrinking' => true,'javascript-delay' => 5000,'enable-javascript' => true,'isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
+        ->loadHtml(utf8_decode($html))->setPaper('A4', 'portrait')->stream('Informe.pdf', array("Attachment" => false));
     }
 
 }
